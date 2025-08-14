@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  header div {
+    font-weight: bold;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  main {
+    padding: 20px 200px 20px 200px;
+    max-width: 1400px;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #009688;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+  }
+  
+  strong {
+    color: #333;
+  }
+  
+  .status-active {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .investment-list {
+    padding: 0;
+  }
+  
+  .investment-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    
+  }
+  
+  .investment-item p {
+    margin: 5px 0;
+  }
+  
+  .investment-actions {
+    text-align: right;
+    margin-top: 10px;
+  }
+  
+  .investment-actions button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .investment-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .investment-actions .delete-button {
+    background-color: #d9534f;
+  }
+  
+  .investment-actions .delete-button:hover {
+    background-color: #c9302c;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-buttons button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .highlight {
+    color: #b33;
+    font-weight: bold;
+  }
+  
+  .actions a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .actions a:hover {
+    text-decoration: underline;
+  }
+  
+  .risk-high {
+    color: red;
+    font-weight: bold;
+  }

@@ -1,0 +1,137 @@
+/* Reset box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Body and font styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.logo-img {
+  height: 40px; /* Adjust height as needed */
+  width: auto;
+  margin-top: 2px; /* Slight vertical adjustment if necessary */
+}
+
+.profile-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.navbar-brand, .nav-link {
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: auto;
+}
+
+.feature h3 {
+    color: #333;
+}
+
+.feature p {
+    color: #666;
+}
+
+.feature a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+.logo-img {
+    height: 40px; /* Adjust height as needed */
+    width: auto;
+    margin-top: 2px; /* Slight vertical adjustment if necessary */
+  }
+
+  /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .navbar .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .content {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .content h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .user-details {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .user-details li {
+    margin-bottom: 10px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .view-reports {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .deactivate-user {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .button:hover {
+    opacity: 0.8;
+  }
+
+  

@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en"> <!--begin::Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Khumbu</title><!--begin::Primary Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous"><!--end::Fonts--><!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous"><!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../admin/dist/css/bootstrap-icons/bootstrap-icons.min.css"><!--end::Required Plugin(AdminLTE)--><!-- apexcharts -->
+    <link rel="stylesheet" href="../admin/dist/css/adminlte-custom.css"><!--end::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous"><!-- jsvectormap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js" type="text/javascript"></script>
+    <script src="https://m-e-conroy.github.io/angular-dialog-service/javascripts/dialogs.min.js" type="text/javascript"></script>
+</head> <!--end::Head--> <!--begin::Body-->
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
+    <div class="app-wrapper"> <!--begin::Header-->
+        <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
+            <div class="container-fluid"> <!--begin::Start Navbar Links-->
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i class="bi bi-list"></i> </a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="../index.html" class="nav-link"><i class="bi bi-speedometer"></i> Dashboard</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="../travel.html" class="nav-link">Travel</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="../business.html" class="nav-link">Business</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="../investment.html" class="nav-link">Investment</a> </li>
+
+                </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
+                <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
+                    
+                    <li class="nav-item dropdown user-menu"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="../admin/dist/assets/img/userImage.jpg" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">user</span> </a>
+                  
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
+                            <li class="user-header text-bg-primary"> <img src="../admin/dist/assets/img/user1-128x128.jpg" class="rounded-circle shadow" alt="User Image">
+                                <p>
+                                   Kagiso Mawhite
+                                   <small>LoxinPreneur</small>
+                                </p>
+                            </li> <!--end::User Image--> <!--begin::Menu Body-->
+                            <li class="user-body"> <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-4 text-center"> <a href="#">Profile</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Friends</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Signout </a> </div>
+                                </div> <!--end::Row-->
+                            </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
+                           </ul>
+                        </li>
+                    
+                    <li class="nav-item"> <a class="nav-link"  href="#" role="button"> <i class="bi bi-gear-fill"></i> Settings </a> </li> <!--end::Navbar Search--> <!--begin::Messages Dropdown Menu-->
+                    <li class="nav-item"> <a class="nav-link"  href="#" role="button"> <i class="bi bi-question-circle-fill"></i>  Help </a> </li>
+                </ul> <!--end::End Navbar Links-->
+            </div> <!--end::Container-->
+        </nav> <!--end::Header--> <!--begin::Sidebar-->
+    
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
+            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="../index.html" class="brand-link"> <!--begin::Brand Image--> <img src="../admin/dist/images/logo-white.png"  class="brand-image opacity-95"> <!--end::Brand Image--></a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
+            <div class="sidebar-wrapper">
+              <nav class="mt-2"> <!--begin::Sidebar Menu-->
+                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+                  <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-file-bar-graph-fill"></i>
+                      <p>
+                         Investment Management
+                      </p>
+                  </a>
+              </li> 
+              <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-graph-up"></i>
+              <p>
+                 invest
+              </p>
+              </a>
+             </li>
+          </ul> 
+          
+        </nav>
+            </div>
+        </aside>
+        <main class="app-main"> <!--begin::App Content Header-->
+          <div class="app-content-header"> <!--begin::Container-->
+                <div class="container-fluid"> <!--begin::Row-->
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h4 class="mb-0">Admin</h4>
+                      </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-end">
+                                <li class="breadcrumb-item"><a href="../index.html   ">..</a></li>
+                                <li class="breadcrumb-item" aria-current="page">
+                                    <a href="../investment.html">Investment</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                  Invest Management
+                              </li>
+                            </ol>
+                        </div>
+                    </div> <!--end::Row-->
+                </div> <!--end::Container-->
+            </div> <!--end::App Content Header--> <!--begin::App Content-->
+            <div class="app-content-header"> <!--begin::Container-->
+                <div class="container-fluid"> <!--begin::Row-->
+                  
+                    <div class="row info-box">
+                      <div class="col-sm-12"><a href="javascript:history.back();" title="back" class="text-primary fs-1"><i class="bi bi-chevron-left"></i></a></div> 
+                      
+                      <main>
+                        <h1>Investment Management (Admin)</h1>
+                        <section>
+                          <h2>Manage Investment Funds</h2>
+                          <div th:each="investment : ${investments}">
+                          <ul>
+                            <p><strong th:text="${investment.key}">Investment Name</strong>| Total Value: <strong th:text="'R' + ${investment.value}">0</strong> | Status: <strong style="color:red;" th:text="${investmentDetails[investment.key]?.status}"></strong></p>
+                          </ul>
+                        </div>  
+                        </section>
+                        <section>
+                          <h2>View Member Investments</h2>
+                          <div th:each="users :${Users}">
+                          <ul>
+                            <p><strong th:text="${users.name}"></strong> <strong th:text="${users.surname}"></strong> : R5,000 in Property Fund</p>       
+                          </ul>
+                        </div>
+                        </section>
+                      </main>
+                        </div> <!--end::Quick Example--> <!--begin::Input Group-->
+                      </div>                       
+                    </div> <!--end::Row-->
+                </div> <!--end::Container-->
+            </div> <!--end::App Content Header--> <!--begin::App Content-->              
+       </main>
+    </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
+ <!-- <div id = "loading_indicator"> </div>-->
+ <div id="loading_indicator">
+    <div class="three-balls">
+      <div class="ball ball1"></div>
+      <div class="ball ball2"></div>
+      <div class="ball ball3"></div>
+    </div>
+  </div>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script> <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="../admin/dist/js/adminlte.js"></script> <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script src="../admin/dist/js/loading.js"></script>
+
+    <script>
+        $(".triprequestform-wrapper").load("add-trip.html");
+    </script>

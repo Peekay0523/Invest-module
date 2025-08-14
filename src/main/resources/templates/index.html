@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en"> <!--begin::Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Khumbu</title><!--begin::Primary Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous"><!--end::Fonts--><!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous"><!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="admin/dist/css/bootstrap-icons/bootstrap-icons.min.css"><!--end::Required Plugin(AdminLTE)--><!-- apexcharts -->
+    <link rel="stylesheet" href="admin/dist/css/adminlte-custom.css"><!--end::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous"><!-- jsvectormap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
+
+</head> <!--end::Head--> <!--begin::Body-->
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary example"> <!--begin::App Wrapper-->
+
+    <div class="app-wrapper"> <!--begin::Header-->
+        <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
+            <div class="container-fluid"> <!--begin::Start Navbar Links-->
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i class="bi bi-list"></i> </a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="#" class="nav-link"><i class="bi bi-speedometer"></i> Dashboard</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="travel.html" class="nav-link">Travel</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="business.html" class="nav-link">Business</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="investDashboard" class="nav-link">Investment</a> </li>
+
+                </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
+                <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
+                    
+                    <li class="nav-item dropdown user-menu"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="admin/dist/assets/img/userImage.jpg" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">user</span> </a>
+                  
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
+                            <li class="user-header text-bg-primary"> <img src="admin/dist/assets/img/userImage.jpg" class="rounded-circle shadow" alt="User Image">
+                                <p>
+                                   user
+                                   <small>LoxinPreneur</small>
+                                </p>
+                            </li> <!--end::User Image--> <!--begin::Menu Body-->
+                            <li class="user-body"> <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-4 text-center"> <a href="#">Profile</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Friends</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Signout </a> </div>
+                                </div> <!--end::Row-->
+                            </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
+                           </ul>
+                        </li>
+                    
+                    <li class="nav-item"> <a class="nav-link"  href="#" role="button"> <i class="bi bi-gear-fill"></i> Settings </a> </li> <!--end::Navbar Search--> <!--begin::Messages Dropdown Menu-->
+                    <li class="nav-item"> <a class="nav-link"  href="#" role="button"> <i class="bi bi-question-circle-fill"></i>  Help </a> </li>
+
+                </ul> <!--end::End Navbar Links-->
+            </div> <!--end::Container-->
+        </nav> <!--end::Header--> <!--begin::Sidebar-->
+    
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
+            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link"> <!--begin::Brand Image--> <img src="admin/dist/images/logo-white.png"  class="brand-image"> <!--end::Brand Image--></a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2"> <!--begin::Sidebar Menu-->
+                    
+                   
+                        <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-calculator-fill"></i>
+                                <p>
+                                   Investment
+                                </p>
+                            </a>
+                        </li> 
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-clipboard-data-fill"></i>
+                        <p>
+                           System Report
+                        </p>
+                        </a>
+                       </li>
+                    </ul> 
+                </nav>
+            </div>
+        </aside>
+        <main class="app-main"> <!--begin::App Content Header-->
+            <div class="app-content-header"> <!--begin::Container-->
+                <div class="container-fluid"> <!--begin::Row-->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4 class="mb-0">Dashboard</h4>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-end">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Dashboard
+                                </li>
+                            </ol>
+                        </div>
+                    </div> <!--end::Row-->
+                </div> <!--end::Container-->
+            </div> 
+            <div class="app-content"> <!--begin::Container-->
+                <div class="container-fluid floating"> <!--begin::Row-->
+                    <div class="row">                        
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="info-box text-bg-primary shadow" id="dashboard-summary-box"> <span class="info-box-icon"> <i class="bi bi-car-front-fill"></i> </span>
+                                <div class="info-box-content pt-3"> <span class="info-box-text"><h4>Travel Summary</h4></span> 
+                                    <span><i class="bi bi-file-bar-graph"></i> Travel Savings   
+                                        <span class="badge text-bg-warning float-end">R2000</span>
+                                    </span>
+                                    <span><i class="bi bi-person-fill"></i> Trip Requests  <span class="badge text-bg-warning float-end">3</span></i></span>
+                                    <span><i class="bi bi-clock-history"></i> Trip History <span class="badge text-bg-warning float-end">1</span></i></span>
+                                    <span>&nbsp;</span>
+                                </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="info-box text-bg-danger shadow" id="dashboard-summary-box"> <span class="info-box-icon"> <i class="bi bi-currency-exchange"></i> </span>
+                                <div class="info-box-content pt-3"> <span class="info-box-text"><h4>Business Summary</h4></span> 
+                                    <span><i class="bi bi-list"></i> Skill Listings </span>
+                                    <span><i class="bi bi-chat-right-dots-fill"></i> Business Assist </span>
+                                    <span><i class="bi bi-graph-up"></i> Income Tracking </span>
+                                    <span>&nbsp;</span>
+                                </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                        <div class="col-md-4 col-sm-6 col-12" onclick="window.location.href='investDashboard';">
+                            
+                            <div class="info-box text-bg-secondary shadow" id="dashboard-summary-box"> <span class="info-box-icon"> <i class="bi bi-graph-up-arrow"></i> </span>
+                                
+                                <div class="info-box-content pt-3"> <span class="info-box-text"><h4>
+                                     Investment Summary</h4></span> 
+                                
+                                    <span><i class="bi bi-wallet2"></i> Current Investments </span>
+                                    <span><i class="bi bi-bar-chart-fill"></i> Performance Summary </span>
+                                    <span><i class="bi bi-clock-history"></i> Investment History </span>
+                                    <span>&nbsp;</span>
+                                
+                                </div> <!-- /.info-box-content -->
+                            
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                    </div> 
+                </div>
+                <div class="row"> 
+                    <div class="col-md-6 col-sm-6 col-12 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <div class="card-tools">  <button type="button" class="btn btn-tool"  title="Download Report"> <i class="bi bi-download"></i></button> <button type="button" class="btn btn-tool"  title="Refresh"> <i class="bi bi-arrow-clockwise"></i></button></div>
+
+                                     <h3 class="card-title"> <i class="bi bi-reception-4 text-primary"></i> Expense Gap Tracking</h3>
+                                         </div> <!-- /.card-header -->
+                                                <div class="table-responsive overflow-hidden">   
+                                                    
+                                                    <div class="row mt-4">
+                                                          <div class="col-4">
+                                                                <div class="info-box shadow-md"> <span class="info-box-icon text-primary shadow-none "> <i class="bi bi-car-front"></i> </span>
+                                                                    <div class="info-box-content"> <span class="info-box-text">Travel Savings</span> 
+                                                                        <span class="info-box-number fs-5"> R2000</span> 
+                                                                    </div> <!-- /.info-box-content -->
+                                                                </div> <!-- /.info-box --> 
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="info-box shadow-md"> <span class="info-box-icon text-primary shadow-none"> <i class="bi bi-graph-up-arrow"></i> </span>
+                                                                    <div class="info-box-content"> <span class="info-box-text">Investment Returns</span>
+                                                                         <span class="info-box-number fs-5">R6500</span> 
+                                                                    </div> <!-- /.info-box-content -->
+                                                                </div> <!-- /.info-box --> 
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="info-box shadow-md"> <span class="info-box-icon text-primary shadow-none fs-3 w-25"> <i class="bi bi-cash-coin"></i> </span>
+                                                                    <div class="info-box-content"> <span class="info-box-text">Business Earnings </span> 
+                                                                        <span class="info-box-number fs-5">R8000</span> 
+                                                                    </div> <!-- /.info-box-content -->
+                                                                </div> <!-- /.info-box --> 
+                                                            </div>
+                                                            <div class="col-10 mt-3 ">
+                                                                <h6 class="fw-bold">Actual Summary:</h6>
+                                                                                                                                   <ul class="is-no-padding">
+                                                                        <li class="dot-leader">
+                                                                            <span class="dot-leader__left"><i class="bi bi-arrow-right-short text-primary"></i> Est. Monthly Travel Expenses</span>
+                                                                            <span class="dot-leader__right fw-bold">R2000</span>
+                                                                        </li>
+                                                                        <li class="dot-leader">
+                                                                            <span class="dot-leader__left"><i class="bi bi-arrow-right-short text-primary"></i>  Monthly Budget Balance</span>
+                                                                            <span class="dot-leader__right fw-bold">R6500</span>
+                                                                        </li>
+                                                                    </ul>
+                                                            </div>
+                                                            <p class="mt-1"><i class="bi bi-download text-primary"></i> <a href="#" class="text-primary">Download Report</a> </p>
+
+                                                     </div>
+                                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                    
+                    <div class="col-md-5 col-sm-6 col-12 mt-4">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <p class="d-flex flex-column"> <span class="fw-bold fs-5">Total Investment </span><span>Performance Summary</span> </p>
+                                <p class="ms-auto d-flex flex-column text-end"> <span class="text-success"> <i class="bi bi-arrow-up"></i> 12.5%
+                                    </span> <span class="text-secondary">Since last week</span> </p>
+                            </div> <!-- /.d-flex -->
+                            <div class="position-relative mb-4">
+                                <div id="sales-chart"></div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-end">  </div>
+                        </div>
+                    </div>
+
+                   
+                      
+                </div>
+                <div class="row"><div class="col-md-6 col-sm-6 col-12 mt-4">
+                    <div class="card">
+                       <div class="card-body">
+                           <div class="card-header">
+                                <h3 class="card-title"> <i class="bi bi-geo-alt-fill text-primary"></i> Transport Bookings</h3>
+                                <div class="card-tools trip-request-tools"> <a href="#" class="btn btn-tool btn-sm"> <i class="bi bi-share" title="Share"></i> </a> <a href="javascript:void(0);" class="btn btn-tool btn-sm" id="view-request-list"> <i class="bi bi-list" title="Trip Requests"></i> </a> </div>
+                                    </div> <!-- /.card-header -->
+                                           <div class="table-responsive trip-request-list">   
+                                                <table class="table m-0 table-bright">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Request ID</th>
+                                                            <th>Destination</th>
+                                                            <th>Status</th>
+                                                            <th>Date</th>
+                                                            <th>View</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">TRP9842</a> </td>
+                                                            <td>Pretoria</td>
+                                                            <td> <span class="badge text-bg-pending fw-normal">
+                                                                    Pending
+                                                                </span> </td>
+                                                            <td>
+                                                                <div id="table-sparkline-1">05/01/2025</div>
+                                                            </td>
+                                                            <td>
+                                                                <a href="javascript:void(0);" id="request1"><i class="bi bi-eye-fill text-primary"></i></a> 
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                    
+                                                    </tbody>
+                                                </table>
+                                                <p class="mt-5"><a href="#" class="text-primary">View all</a></p>
+                                            </div>
+
+                                            <div class="table-responsive trip-request-view overflow-hidden">   
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-6 col-12 mt-4">
+                                                        <h4 class="fw-bold">Member</h4>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-6 col-12 mt-4">
+                                                        Request ID: <span class="fw-bold">TRP942</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5 col-sm-6 col-12">
+                                                            <div class="info-box mb-3 border-0 shadow-none driver-info"> <span class="info-box-icon"> <img src="admin/dist/assets/img/member-128x128.jpg" class="rounded-circle shadow" alt="User Image"> </span>
+                                                                <div class="info-box-content"> 
+                                                                <span class="info-box-text fw-bold">Tseke Leke</span> 
+                                                                <span>072 123 0000</span> 
+                                                                <span>tseki@gmail.com</span> </div>
+                                                                <!-- /.info-box-content -->
+                                                            </div> <!-- /.info-box -->
+                                                            <div class="timeline-footer"> <a class="btn btn-primary btn-sm" href="/travel/bookings.html">View Details</a> </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-6 col-12">
+                                                       <div class="timeline">
+                                                        <div> <i class="timeline-icon bi bi-geo-alt-fill text-bg-success "></i>
+                                                            <div class="timeline-item shadow-none">
+                                                                <span class="fw-bold">Departure</span></br>
+                                                                <span>336 Looper St, Midrand</span>
+                                                            </div>
+                                                        </div> <!-- END timeline item --> <!-- timeline item -->
+                                                        <div> <i class="timeline-icon bi bi-pin-map-fill text-bg-danger "></i>
+                                                            <div class="timeline-item shadow-none">
+                                                                <span class="fw-bold">Destination</span></br>
+                                                                <span>9A1 Onder St, Polokwane</span>
+                                                            </div>
+                                                        </div> <!-- END timeline item --> <!-- timeline item -->
+                                                        
+                                                       </div>
+                                                       
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-6 col-12">
+                                                        <div class="info-box mb-3 border-0 shadow-none driver-info">
+                                                            <div class="info-box-content"> 
+                                                            <span class="info-box-text"><b>Date:</b> 15 /01/ 24</span>
+                                                            <span class="info-box-text"><b>Time:</b> 17h00</span>
+                                                            <span>&nbsp;</span>
+                                                        </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div> <!-- /.info-box -->
+                                                    </div>
+                                                    
+                                                </div>
+                                               
+                                            </div>
+                        </div>
+                    </div>
+                </div>   
+                   
+                    <div class="col-md-5 col-sm-6 col-12 mt-4">
+                        <div class="card card-outline card-success">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="bi bi-people-fill text-primary"></i> Available Skills & Services</h3>
+                                <div class="card-tools"> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"> <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse" class="bi bi-dash-lg"></i> </button> </div> <!-- /.card-tools -->
+                            </div> <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                                <th>Name</th>
+                                                <th>Contact</th>
+                                                <th>&nbsp;</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td> 
+                                                    Skill
+                                                </td>
+                                                <td>Plumbing</td>
+                                                <td> 
+                                                    K. Maplumber
+                                                </td>
+                                                <td>083764754</td>
+                                                <td> <a href="#" class="text-primary"> <i class="bi bi-search"></i> </a> </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 
+                                                    Service
+                                                </td>
+                                                <td>Website Development</td>
+                                                <td> 
+                                                    M. Madeveloper
+                                                </td>
+                                                <td>083764754</td>
+                                                <td> <a href="#" class="text-primary"> <i class="bi bi-search"></i> </a> </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 
+                                                    Service
+                                                </td>
+                                                <td>DSTV Installation</td>
+                                                <td> 
+                                                    M. MaInstaller
+                                                </td>
+                                                <td>083764754</td>
+                                                <td> <a href="#" class="text-primary"> <i class="bi bi-search"></i> </a> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="mt-2"><a href="#" class="text-primary">View all</a></p>
+                                </div>
+                            </div> <!-- /.card -->    
+                            </div> <!-- /.card-body -->
+                        </div> <!-- /.card -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script> <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+        <script src="admin/dist/js/adminlte.js"></script> <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+        <script>
+            var navBar = $(".floating");
+            var hdrHeight = $("header").height();
+            navBar.removeClass("floating");
+
+            $(window).scroll(function() {
+                if( $(this).scrollTop()> hdrHeight -50) {
+                    navBar.addClass("floating");
+       
+                } else {
+                    navBar.removeClass("floating");
+                }
+            });
+        </script>
+        
+        <script>
+        //SHOW/HIDE HIDE TRIP REQUEST RECORDS
+        //++++++++++++++++++++++++++++++++++
+        $('.trip-request-tools').hide();
+        $('.trip-request-view').hide();
+
+            $('#request1').on('click', function(){
+                $('.trip-request-list').hide();
+                $('.trip-request-tools').show();
+                $('.trip-request-view').show();
+            });
+            $('#view-request-list').on('click', function(){
+                $('.trip-request-list').show();
+                $('.trip-request-tools').hide();
+                $('.trip-request-view').hide();
+            });
+        </script>
+        
+        <script>
+            const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
+            const Default = {
+                scrollbarTheme: "os-theme-light",
+                scrollbarAutoHide: "leave",
+                scrollbarClickScroll: true,
+            };
+            document.addEventListener("DOMContentLoaded", function() {
+                const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
+                if (
+                    sidebarWrapper &&
+                    typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== "undefined"
+                ) {
+                    OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+                        scrollbars: {
+                            theme: Default.scrollbarTheme,
+                            autoHide: Default.scrollbarAutoHide,
+                            clickScroll: Default.scrollbarClickScroll,
+                        },
+                    });
+                }
+            });
+        </script> <!--end::OverlayScrollbars Configure--> <!-- OPTIONAL SCRIPTS --> <!-- apexcharts -->
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js" integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script>
+        <script>
+            // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
+            // IT'S ALL JUST JUNK FOR DEMO
+            // ++++++++++++++++++++++++++++++++++++++++++
+    
+            const visitors_chart_options = {
+                series: [{
+                        name: "High - 2023",
+                        data: [100, 120, 170, 167, 180, 177, 160],
+                    },
+                    {
+                        name: "Low - 2023",
+                        data: [60, 80, 70, 67, 80, 77, 100],
+                    },
+                ],
+                chart: {
+                    height: 200,
+                    type: "line",
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                colors: ["#0d6efd", "#adb5bd"],
+                stroke: {
+                    curve: "smooth",
+                },
+                grid: {
+                    borderColor: "#e7e7e7",
+                    row: {
+                        colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+                        opacity: 0.5,
+                    },
+                },
+                legend: {
+                    show: false,
+                },
+                markers: {
+                    size: 1,
+                },
+                xaxis: {
+                    categories: ["22th", "23th", "24th", "25th", "26th", "27th", "28th"],
+                },
+            };
+    
+            const visitors_chart = new ApexCharts(
+                document.querySelector("#visitors-chart"),
+                visitors_chart_options
+            );
+            visitors_chart.render();
+    
+            const sales_chart_options = {
+                series: [{
+                        name: "Net Profit",
+                        data: [44, 55, 57],
+                    },
+                    {
+                        name: "Revenue",
+                        data: [76, 85, 101],
+                    }
+                ],
+                chart: {
+                    type: "bar",
+                    height: 200,
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: "55%",
+                        endingShape: "rounded",
+                    },
+                },
+                legend: {
+                    show: false,
+                },
+                colors: ["#0d6efd", "#4c9d40"],
+                dataLabels: {
+                    enabled: false,
+                },
+                stroke: {
+                    show: true,
+                    width: 2,
+                    colors: ["transparent"],
+                },
+                xaxis: {
+                    categories: [
+                        "Jan",
+                        "Feb",
+                        "Mar",
+                        "Apr",
+                        "May",
+                        "Jun",
+                        "Jul",
+                        "Aug",
+                        "Sep",
+                        "Oct",
+                    ],
+                },
+                fill: {
+                    opacity: 1,
+                },
+                tooltip: {
+                    y: {
+                        formatter: function(val) {
+                            return "$ " + val + " thousands";
+                        },
+                    },
+                },
+            };
+    
+            const sales_chart = new ApexCharts(
+                document.querySelector("#sales-chart"),
+                sales_chart_options
+            );
+            sales_chart.render();
+        </script> <!--end::Script-->
+</body><!--end::Body-->
+
+</html>
