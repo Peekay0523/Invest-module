@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -22,13 +22,11 @@ import com.invest.khumbu.DTO.InvestmentDTO;
 import com.invest.khumbu.Model.Investment;
 import com.invest.khumbu.Model.MakeInvestment;
 import com.invest.khumbu.Model.User;
-import com.invest.khumbu.Repository.InvestmentRepository;
 import com.invest.khumbu.Repository.MakeInvestmentRepository;
 import com.invest.khumbu.Repository.UserRepository;
 import com.invest.khumbu.Services.InvestmentService;
 import com.invest.khumbu.Services.MakeInvestmentService;
 import com.invest.khumbu.Services.SavingsServices;
-import com.invest.khumbu.Services.UserService;
 
 @Controller
 public class InvestmentController {
@@ -52,6 +50,22 @@ public class InvestmentController {
     @GetMapping("/index")
     public String index() {
         return "index";
+    }
+    @GetMapping("/signup-login")
+    public String signuplogin() {
+        return "signup-login";
+    }
+    @GetMapping("/logon/forgot-password")
+    public String forgotPassword() {
+        return "logon/forgot-password";
+    }
+    @GetMapping("/logon/login")
+    public String login() {
+        return "logon/login";
+    }
+    @GetMapping("/logon/signup")
+    public String signup() {
+        return "logon/signup";
     }
     @GetMapping("/investDashboard")
     public String investDashboard() {

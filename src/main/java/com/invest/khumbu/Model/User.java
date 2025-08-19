@@ -19,11 +19,8 @@ public class User {
    @Column(name = "user_id")
     private Long userId;
     
-    private String name;
-    private String surname;
-    private String email;
-    private String mobile_number;
-    private String id_number;
+    private String username;
+    private String emailMobile;
     private String password;
 
     @Temporal(TemporalType.DATE)
@@ -32,14 +29,11 @@ public class User {
     public User() {
     }
 
-    public User(Date date, String email, String id_number, String mobile_number, String name, String password, String surname) {
+    public User(Date date, String emailMobile, String username, String password) {
         this.date = date;
-        this.email = email;
-        this.id_number = id_number;
-        this.mobile_number = mobile_number;
-        this.name = name;
+        this.emailMobile = emailMobile;
+        this.username = username;
         this.password = password;
-        this.surname = surname;
     }
 
     public Long getUserId() {
@@ -51,43 +45,19 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setName(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
-        return email;
+        return emailMobile;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getMobileNumber() {
-        return mobile_number;
-    }
-
-    public void setMobileNumber(String mobile_number) {
-        this.mobile_number = mobile_number;
-    }
-
-    public String getIdNumber() {
-        return id_number;
-    }
-
-    public void setIdNumber(String id_number) {
-        this.id_number = id_number;
+    public void setEmail(String emailMobile) {
+        this.emailMobile = emailMobile;
     }
 
     public String getPassword() {
