@@ -126,7 +126,8 @@
                       <div class="row fs-2 fw-bold">
                           <div class="col-md-4 col-sm-6 col-sm-12">Total ROI:</div>
                           <div class="col-md-4 col-sm-6 col-sm-12">
-                              <span th:text="${investments != null and !investments.isEmpty() ? #aggregates.avg(investments.![roi]) : 0}">0</span>%
+                              <!--<span th:text="${investments != null and !investments.isEmpty() ? #aggregates.avg(investments.![roi]) : 0}">0</span>%-->
+                              <span th:text="${makeInvestments != null and !makeInvestments.isEmpty() ? #aggregates.avg(makeInvestments.![investment.roi]) : 0}">0</span>%
                           </div>
                       </div>
                   </div>

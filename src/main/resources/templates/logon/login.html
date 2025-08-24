@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> <!--begin::Head-->
+<html xmlns:th="http://www.thymeleaf.org"><!--begin::Head-->
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -24,46 +24,53 @@
                         <div class="login-logo"><image src="../admin/dist/images/logo-green-outline.png" class="logo w-50" alt="User logo"></image> </div> <!-- /.login-logo -->
         
                         <p class="login-box-msg">Login to your account</p>
-                        <form action="/use/login" method="post">
-    <div class="input-group w-50 mb-3">
-        <span class="input-group-text fw-bold"><i class="bi bi-person-fill fs-4 text-primary"></i></span>
-        <select class="form-select" name="role" required>
-            <option selected disabled>Role</option>
-            <option value="Admin">Admin</option>
-            <option value="Client">Client</option>
-        </select>
-    </div>
+            <form th:action="@{/use/login}" method="post">
+            <!--<form action="/use/login" method="post">-->
 
-    <span id="emailFeedback" style="color: red;"></span>
-    <div class="input-group mb-3">
-        <input type="email" name="emailMobile" class="form-control" placeholder="Email" required>
-        <div class="input-group-text"><span class="bi bi-envelope-fill text-primary"></span></div>
-    </div>
+                <!-- Error message -->
+                <div th:if="${loginError}" class="alert alert-danger text-center">
+                    <span th:text="${loginError}"></span>
+                </div>
+                <div th:if="${loginError}" class="text-danger mb-2" th:text="${loginError}"></div>
+                <!--<div class="input-group w-100 mb-3">
+                    <span class="input-group-text fw-bold"><i class="bi bi-person-fill fs-4 text-primary"></i></span>
+                    <select class="form-select" name="role" required>
+                        <option selected disabled>Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Client">Client</option>
+                    </select>
+                </div>-->
 
-    <span id="passFeedback" style="color: red;"></span>
-    <div class="input-group mb-3">
-        <input type="password" name="password" class="form-control" placeholder="Password" maxlength="8" required>
-        <div class="input-group-text"><span class="bi bi-lock-fill text-primary"></span></div>
-    </div>
+                <div class="input-group mb-3">
+                    <input type="email" name="emailMobile" class="form-control" placeholder="Email" required>
+                    <div class="input-group-text"><span class="bi bi-envelope-fill text-primary"></span></div>
+                </div>
 
-    <div class="row">
-        <div class="col-6">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">Remember Me</label>
-            </div>
-        </div>
-        <div class="col-6 text-end">
-            <a href="forgot-password" class="custom-link">Forgot my password</a>
-        </div>
-    </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Password" maxlength="8" required>
+                    <div class="input-group-text"><span class="bi bi-lock-fill text-primary"></span></div>
+                </div>
 
-    <div class="d-grid gap-2 d-flex justify-content-center mt-3">
-        <button type="submit" class="badge bg-primary rounded-pill fs-6 fw-normal text-decoration-none w-50 p-3">
-            Login
-        </button>
-    </div>
-</form>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Remember Me</label>
+                        </div>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a href="forgot-password" class="custom-link">Forgot my password</a>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 d-flex justify-content-center mt-3">
+                    <button type="submit" class="badge bg-primary rounded-pill fs-6 fw-normal text-decoration-none w-50 p-3">
+                        Login
+                    </button>
+                </div>
+            </form>
+
+
 
                        <!-- <div class="social-auth-links text-center mb-3 d-grid gap-2">
                             <p>- OR -</p> <a href="#" class="btn btn-primary"> <i class="bi bi-facebook me-2"></i> Sign in using Facebook

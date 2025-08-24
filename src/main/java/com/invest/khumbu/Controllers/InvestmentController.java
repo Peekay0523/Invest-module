@@ -142,8 +142,8 @@ public class InvestmentController {
         for(int x=0;x<vest.size();x++){
             amount = amount + vest.get(x).getInvestAmount();
         }
-        Double firstVal=vest.get(0).getInvestAmount();
-        total=total.add(BigDecimal.valueOf(amount+firstVal));
+        
+        total=total.add(BigDecimal.valueOf(amount));
         
         model.addAttribute("sum",total+" ");
         return "performanceHistory";
@@ -280,7 +280,7 @@ public List<InvestmentDTO> getInvestments() {
 
 @PostMapping("/investments/save")
 public String saveMakeInvestment(
-        @RequestParam("investment.id") Long investmentId,
+        @RequestParam("id") Long investmentId,
         @RequestParam("investType") String investType,
         @RequestParam("investAmount") Double investAmount,
         @RequestParam("remarks") String remarks,

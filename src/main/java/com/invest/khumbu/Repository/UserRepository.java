@@ -6,5 +6,6 @@ import com.invest.khumbu.Model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> { 
     User findByEmailMobileAndPassword(String emailMobile, String password);
+    boolean existsByEmailMobile(String emailMobile);
 }
 

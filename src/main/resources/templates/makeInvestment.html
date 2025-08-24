@@ -112,66 +112,59 @@
                       <div class="col-sm-12">
                         <div class="card mb-4 col-sm-6"> 
                             <!--begin::Header-->
-                            <form id="investmentForm" method="post" th:action="@{/investments/save}" th:object="${investment}">
-                                <div class="card-body">
-                                    
-                                    <!-- Dropdown to choose an Investment -->
-                                    <div class="mb-3">
-                                        <label for="investmentId" class="form-label">Select Investment:</label>
-                                        <select th:field="*{investment.id}" class="form-select" id="investmentId" required>
-                                            <option value="" selected disabled>-- Select an Investment --</option>
-                                            <th:block th:each="inv : ${investments}">
-                                                <option th:value="${inv.id}" th:text="${inv.name}"></option>
-                                            </th:block>
-                                        </select>
-                                    </div>
-                            
-                                    <!-- Investment Name (not needed because it's chosen from the dropdown) -->
-                                    <div class="mb-3">
-                                        <label for="investType" class="form-label">Investment Name:</label>
-                                        <select th:field="*{investType}" class="form-select" id="investType" required>
-                                            <option value="" selected disabled>-- Select an Investment --</option>
-                                            <th:block th:each="inv : ${investments}">
-                                                <option th:value="${inv.id}" th:text="${inv.description}"></option>
-                                            </th:block>
-                                        </select>
-                                    </div>
-                            
-                                    <div class="mb-3">
-                                        <label for="investAmount" class="form-label">Investment Amount:</label>
-                                        <div class="input-group w-50">
-                                            <span class="input-group-text fw-bold" id="inputAmount">R</span>
-                                            <input th:field="*{investAmount}" class="form-control" type="number" id="investmentAmount" required>
-                                        </div>
-                                    </div>
-                            
-                                    <div class="mb-3">
-                                        <label for="remarks" class="form-label">Remarks:</label>
-                                        <textarea th:field="*{remarks}" class="form-control" id="remarks"></textarea>
-                                    </div>
-                            
-                                    <div class="mb-3">
-                                        <label for="date" class="form-label">Date:</label>
-                                        <input th:field="*{date}" class="form-control" type="datetime-local" id="date" required>
-                                    </div>
-                                </div>
-                            
-                                <!-- Error message -->
-                                <div>
-                                    <span id="investmentError" style="color: red;"></span>
-                                </div>
-                                <!--display amount
-                                <p id="displayAmount" class="mt-2 text-success"></p>
-                                <p id="displayId" class="mt-2 text-success"></p>
-                                -->
-                                    <!-- Investment details will be displayed here -->
-                                </div>
-                                <!-- Submit and Back buttons -->
-                                <div>
-                                    <button type="submit" class="btn btn-success">Create Investment</button>
-                                    <a href="javascript:history.back();" class="btn btn-primary">Back</a>
-                                </div>
-                            </form>                                                                               
+                            <form id="investmentForm" method="post" th:action="@{/investments/save}">
+    <div class="card-body">
+
+        <!-- Dropdown for Investment -->
+        <div class="mb-3">
+            <label for="investmentId" class="form-label">Select Investment:</label>
+            <select name="id" class="form-select" id="investmentId" required>
+                <option value="" selected disabled>-- Select an Investment --</option>
+                <th:block th:each="inv : ${investments}">
+                    <option th:value="${inv.id}" th:text="${inv.name}"></option>
+                </th:block>
+            </select>
+        </div>
+
+        <!-- Investment Type -->
+        <div class="mb-3">
+            <label for="investType" class="form-label">Investment Type:</label>
+            <select name="investType" class="form-select" id="investType" required>
+                <option value="" selected disabled>-- Select Type --</option>
+                <th:block th:each="inv : ${investments}">
+                    <option th:value="${inv.description}" th:text="${inv.description}"></option>
+                </th:block>
+            </select>
+        </div>
+
+        <!-- Amount -->
+        <div class="mb-3">
+            <label for="investAmount" class="form-label">Investment Amount:</label>
+            <div class="input-group w-50">
+                <span class="input-group-text fw-bold">R</span>
+                <input name="investAmount" class="form-control" type="number" id="investAmount" required>
+            </div>
+        </div>
+
+        <!-- Remarks -->
+        <div class="mb-3">
+            <label for="remarks" class="form-label">Remarks:</label>
+            <textarea name="remarks" class="form-control" id="remarks"></textarea>
+        </div>
+
+        <!-- Date -->
+        <div class="mb-3">
+            <label for="date" class="form-label">Date:</label>
+            <input name="date" class="form-control" type="datetime-local" id="date" required>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-success">Create Investment</button>
+        <a href="javascript:history.back();" class="btn btn-primary">Back</a>
+    </div>
+</form>
+                                                                               
                              <!--end::Form-->
                         </div> <!--end::Quick Example--> <!--begin::Input Group-->
                       </div>

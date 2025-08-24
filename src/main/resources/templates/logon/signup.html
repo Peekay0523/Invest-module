@@ -16,32 +16,70 @@
         <div class="card"> 
             <div class="card-body login-card-body">
                 <div class="login-logo"><image src="../admin/dist/images/logo-green-outline.png"  class="img-fluid img-thumbnail border-0 shadow-none w-50"></image> </div> <!-- /.login-logo -->
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger mt-2" th:if="${param.error == 'password_mismatch'}" style="color: red;">
+                            Passwords do not match.
+                        </div>
+                        <div class="alert alert-danger mt-2" th:if="${param.error == 'email_exists'}" style="color: red;">
+                            Email already registered. Please use another email.
+                        </div>
+                        
+                    </div>
+  <div th:if="${errorMessage}" class="alert alert-danger" th:text="${errorMessage}"></div>
+  <div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
 
+                    <div th:if="${param.success}">
+                        <div class="alert alert-success mt-2">
+                            Registration successful! Please log in.
+                        </div>
+                    </div>
                 <p class="login-box-msg">Create your account</p>
-                <form action="/users/register" method="post">
+<form th:action="@{/users/register}" method="post" novalidate>
+    <!-- Email / Mobile -->
+        <div class="mb-3">
+      <label class="form-label">Email or Phone (10 digits)</label>
+      <input type="text"
+             class="form-control"
+             name="email_mobile"
+             placeholder="Email or Phone Number"
+             th:value="${email_mobile}"
+             pattern="(?:\\d{10}|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})"
+             title="Enter a valid 10-digit phone number or a valid email address"
+             required>
+    </div>
+
+    <!-- Username -->
     <div class="input-group mb-3">
-        <input type="text" class="form-control" name="email_mobile" placeholder="Email or Phone Number" required>
+        <input type="text" class="form-control" name="username" 
+               placeholder="Username" 
+               th:value="${username}" required>
     </div> 
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" name="username" placeholder="Username" required>
-    </div> 
+
+    <!-- Password -->
     <div class="input-group mb-3">
         <input type="password" class="form-control" name="password" placeholder="Password" required>
     </div> 
+
+    <!-- Confirm Password -->
     <div class="input-group mb-3">
         <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required>
     </div>
+    
+    
 
+    <!-- Submit Button -->
     <div class="row">
         <div class="col-12">
             <div class="d-grid gap-2 d-flex justify-content-center">
-                <button type="submit" class="badge bg-primary rounded-pill fs-6 fw-normal text-decoration-none w-50 p-3">
+                <button type="submit" 
+                        class="badge bg-primary rounded-pill fs-6 fw-normal text-decoration-none w-50 p-3">
                     Sign Up
                 </button>
             </div>
         </div>
     </div>
 </form>
+
 
                <!-- <div class="social-auth-links text-center mb-3 d-grid gap-2">
                     <p>- OR -</p> <a href="#" class="btn btn-primary"> <i class="bi bi-facebook me-2"></i> Sign in using Facebook
@@ -55,9 +93,10 @@
                 </div>
                 <div class="row">
                         <div class="col-12">
-                            <p class="mb-0">Already have an account?  <a href="login" class="text-center custom-link">
+                            <p class="mb-0">Already have an account?  <a href="/logon/login" class="text-center custom-link">
                                 Login
                             </a> </p>
+                            
                         </div>
                 </div>
                
