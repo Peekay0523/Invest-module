@@ -1,5 +1,7 @@
 package com.invest.khumbu.Controllers;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,9 +62,9 @@ public class SignUpController {
         User user = new User();
         user.setEmail(emailMobile);    // <-- ensure your entity has this field
         user.setName(username);
-        user.setPassword(password);          // TODO: hash before saving
-        userRepository.save(user);
-
+        user.setPassword(password); 
+        user.setDate(new Date());      // TODO: hash before saving
+        userRepository.save(user);        
         model.addAttribute("successMessage", "Registration successful! You can now log in.");
         return "logon/signup";
     }

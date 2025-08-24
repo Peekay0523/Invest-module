@@ -110,9 +110,12 @@
                       <div class="col-sm-12"><a href="javascript:history.back();" title="back" class="text-primary fs-1"><i class="bi bi-chevron-left"></i></a></div> 
 
                       <div class="col-sm-12">
+ 
                         <div class="card mb-4 col-sm-6"> 
+<div th:if="${errorMessage}" class="alert alert-danger" th:text="${errorMessage}"></div>
+<div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
                             <!--begin::Header-->
-                            <form id="investmentForm" method="post" th:action="@{/investments/save}">
+<form id="investmentForm" method="post" th:action="@{/makeInvestment}" >
     <div class="card-body">
 
         <!-- Dropdown for Investment -->
@@ -164,7 +167,7 @@
         <a href="javascript:history.back();" class="btn btn-primary">Back</a>
     </div>
 </form>
-                                                                               
+                                                                              
                              <!--end::Form-->
                         </div> <!--end::Quick Example--> <!--begin::Input Group-->
                       </div>

@@ -278,18 +278,40 @@ public List<InvestmentDTO> getInvestments() {
             .collect(Collectors.toList());
 }
 
-@PostMapping("/investments/save")
+@PostMapping("/makeInvestment")
 public String saveMakeInvestment(
         @RequestParam("id") Long investmentId,
         @RequestParam("investType") String investType,
         @RequestParam("investAmount") Double investAmount,
         @RequestParam("remarks") String remarks,
-        @RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date) {  // ✅ Automatically converts
+        @RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date,
+        Model model) {  // ✅ Automatically converts
 
     Investment investment = investmentService.getInvestmentById(investmentId);
     String investName = investment.getName();
     String type = investment.getDescription();
     //String investName = investmentService.getInvestName(investmentId);
+    List<Investment> investments = investmentService.getAllInvestments();
+    
+    
+    if(investAmount < investment.getMinInvestment() || investAmount > investment.getMaxInvestment()) {
+    model.addAttribute("errorMessage",
+        "Invalid amount. Please enter amount between " 
+        + investment.getMinInvestment() + " and " + investment.getMaxInvestment());
+    
+    // Add investments list again
+    
+    model.addAttribute("investments", investments);
+
+    return "makeInvestment"; // Thymeleaf can now render dropdowns
+}
+
+    if(!investType.equals(investment.getDescription())){
+        model.addAttribute("errorMessage","investment Type does not correspond with selected investment!");
+        
+        model.addAttribute("investments", investments);
+        return "makeInvestment";
+    }
 
     MakeInvestment makeInvestment = new MakeInvestment();
     makeInvestment.setInvestment(investment);  
@@ -297,9 +319,12 @@ public String saveMakeInvestment(
     makeInvestment.setInvestType(type);
     makeInvestment.setInvestAmount(investAmount);
     makeInvestment.setRemarks(remarks);
-    makeInvestment.setDate(date);  // ✅ No need for manual parsing
+    makeInvestment.setDate(new Date());  // ✅ No need for manual parsing
 
     makeInvestmentService.saveInvestment(makeInvestment);
+    model.addAttribute("successMessage" ,  "Investment successfully created!");
+
+    
 
     return "redirect:/makeInvestment";
 }
