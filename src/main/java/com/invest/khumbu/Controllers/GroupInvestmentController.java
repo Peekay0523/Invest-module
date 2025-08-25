@@ -46,16 +46,38 @@ public class GroupInvestmentController {
 }
 
     @PostMapping("/group-investments/save")
-    public String saveInvestment(@RequestParam("investment.id") Long investmentId,
+    public String saveInvestment(@RequestParam("id") Long investmentId,
         @RequestParam("investType") String investType,
         @RequestParam("investAmount") Double investAmount,
         @RequestParam("remarks") String remarks,
-        @RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date) {  // ✅ Automatically converts
+        @RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date,
+        Model model) {  // ✅ Automatically converts
 
     Investment investment = investmentService.getInvestmentById(investmentId);
     String investName = investment.getName();
     String type = investment.getDescription();
     //String investName = investmentService.getInvestName(investmentId);
+
+    List<Investment> investments = investmentService.getAllInvestments();
+
+    if(investAmount < investment.getMinInvestment() || investAmount > investment.getMaxInvestment()) {
+    model.addAttribute("errorMessage",
+        "Invalid amount. Please enter amount between " 
+        + investment.getMinInvestment() + " and " + investment.getMaxInvestment());
+    
+    // Add investments list again
+    
+    model.addAttribute("investments", investments);
+
+    return "makeGroupInvestment"; // Thymeleaf can now render dropdowns
+}
+
+    if(!investType.equals(investment.getDescription())){
+        model.addAttribute("errorMessage","investment Type does not correspond with selected investment!");
+        
+        model.addAttribute("investments", investments);
+        return "makeGroupInvestment";
+    }
 
     
     GroupInvestment groupInvestment = new GroupInvestment();
@@ -64,9 +86,10 @@ public class GroupInvestmentController {
     groupInvestment.setInvestType(type);
     groupInvestment.setInvestAmount(investAmount);
     groupInvestment.setRemarks(remarks);
-    groupInvestment.setDate(date);  // ✅ No need for manual parsing
+    groupInvestment.setDate(new Date());  // ✅ No need for manual parsing
 
     groupService.saveInvestment(groupInvestment);
+    model.addAttribute("successMessage" ,  "Investment successfully created!");
     
         return "redirect:/makeGroupInvestment";
     }
