@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.invest.khumbu.Model.User;
 import com.invest.khumbu.Model.User.Language;
+import com.invest.khumbu.Model.User.Tier;
 import com.invest.khumbu.Repository.UserRepository;
 
 import jakarta.servlet.http.HttpSession;
@@ -27,10 +28,10 @@ public class SignUpController {
     // Render the page
     @GetMapping("/signup")
     public String showSignup(
-            @RequestParam(value = "email_mobile", required = false) String emailMobile,
+            @RequestParam(value = "emailMobile", required = false) String emailMobile,
             @RequestParam(value = "fullname", required = false) String fullname,
             Model model) {
-        model.addAttribute("email_mobile", emailMobile);
+        model.addAttribute("emailMobile", emailMobile);
         model.addAttribute("fullname", fullname);
         
         return "logon/signup";
@@ -74,7 +75,7 @@ public class SignUpController {
                                @RequestParam("preferredLanguage") String preferredLanguage,
                                Model model,
                                HttpSession session) {
-
+        model.addAttribute("tier", Tier.values());
         // keep entered values
         model.addAttribute("email_mobile", emailMobile);
         model.addAttribute("fullname", fullname);
@@ -129,15 +130,30 @@ public class SignUpController {
         String digits = s.replaceAll("\\D", ""); // allow spaces/dashes, etc.
         return digits.length() == 10;
     }
+    @GetMapping("/logon/documents-signup")
+    public String signupDocuments(Model model) {
+        model.addAttribute("user", new User());
+        model.addAttribute("tier", Tier.values());
+        return "logon/documents-signup";
+    }
+
+    @GetMapping("/logon/awaiting-approval")
+    public String awaitingApproval() {
+        
+        return "logon/awaiting-approval";
+    }
 
     @PostMapping("/users/register")
 public String registerUser(@RequestParam("idBackImageUrl") MultipartFile idBack,
                            @RequestParam("idFrontImageUrl") MultipartFile idFront,
                            @RequestParam("proofOfAddress") MultipartFile proofOfAddr,
+                           @RequestParam("myTier") String myTier,
+                           Model model,
                            HttpSession session
 
 )throws IOException {
-
+   
+    model.addAttribute("tier", Tier.values());
     User user = (User) session.getAttribute("tempUser");
     if (user == null)
     return "redirect:/logon/signup";
@@ -148,10 +164,11 @@ public String registerUser(@RequestParam("idBackImageUrl") MultipartFile idBack,
     user.setIdBackImageUrl(idBackPath);
     user.setIdFrontImageUrl(idFrontPath);
     user.setProofOfAddress(proofOfAddr.getBytes());
+    user.setTier(User.Tier.valueOf(myTier));
 
     userRepository.save(user);
     session.removeAttribute("tempUser");
-    return "logon/signup";
+    return "logon/awaiting-approval";
 }
 
 }

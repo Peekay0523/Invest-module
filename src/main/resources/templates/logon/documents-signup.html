@@ -37,24 +37,29 @@
 <form th:action="@{/users/register}" method="post" enctype="multipart/form-data">
 
 
-
+    Upload back of ID
     <div class="input-group mb-3">
         <input type="file" class="form-control" name="idBackImageUrl" 
                placeholder="Upload back of ID" 
                 required>
     </div>
-
+        Upload front of ID
         <div class="input-group mb-3">
         <input type="file" class="form-control" name="idFrontImageUrl" 
                placeholder="Upload front of ID" 
                 required>
     </div>
-
+    Upload proof of address
         <div class="input-group mb-3">
         <input type="file" class="form-control" name="proofOfAddress" 
                placeholder="Upload proof of address" 
                 required>
     </div>
+    Select Tier
+    <select name="myTier" class="form-select">
+    <option th:each="tie: ${tier}" th:value="${tie}" th:text="${tie}"></option>
+    </select>
+    <br>
 <!--  
     <div class="input-group mb-3">
         <input type="image" class="form-control" name="tier" 
