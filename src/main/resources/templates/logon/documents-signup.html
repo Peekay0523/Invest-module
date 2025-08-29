@@ -30,83 +30,50 @@
 
                     <div th:if="${param.success}">
                         <div class="alert alert-success mt-2">
-                             successful! Please Proceed.
+                            successful! proceed with documents
                         </div>
                     </div>
-                <p class="login-box-msg">Create your account</p><!--th:object=${user}-->
-<form th:action="@{/users/proceed}" method="post" >
-    <!-- Email / Mobile -->
-        <div class="mb-3">
-      <label class="form-label">Email or Phone (10 digits)</label>
-      <input type="text"
-             class="form-control"
-             name="emailMobile"
-             placeholder="Email or Phone Number"
-             th:value="${emailMobile}"
-             pattern="(?:\\d{10}|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})"
-             title="Enter a valid 10-digit phone number or a valid email address"
-             required>
-    </div>
+                <p class="login-box-msg">Create your account</p>
+<form th:action="@{/users/register}" method="post" enctype="multipart/form-data">
 
-    <!-- Username -->
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" name="fullname" 
-               placeholder="Full Name" 
-               th:value="${fullname}" required>
-    </div> 
+
 
     <div class="input-group mb-3">
-        <input type="text" class="form-control" name="phoneNumber" 
-               placeholder="Phone Number" 
-               th:value="${phoneNumber}" required>
-    </div> 
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" name="watsappNumber" 
-               placeholder="Whatsapp Number" 
-               th:value="${watsappNumber}" required>
+        <input type="file" class="form-control" name="idBackImageUrl" 
+               placeholder="Upload back of ID" 
+                required>
     </div>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" name="idNumber" 
-               placeholder="ID Number" 
-               th:value="${idNumber}" required>
+
+        <div class="input-group mb-3">
+        <input type="file" class="form-control" name="idFrontImageUrl" 
+               placeholder="Upload front of ID" 
+                required>
     </div>
-<!--<label for="preferredLanguage">Preferred Language</label>
-<select th:field="*{preferredLanguage}" name="preferredLanguage">
-    <option th:each="lang : ${T(com.invest.khumbu.Model.$Language).values()}"
-            th:value="${lang}"
-            th:text="${lang}">
-    </option>
-</select>
+
+        <div class="input-group mb-3">
+        <input type="file" class="form-control" name="proofOfAddress" 
+               placeholder="Upload proof of address" 
+                required>
+    </div>
+<!--  
+    <div class="input-group mb-3">
+        <input type="image" class="form-control" name="tier" 
+               placeholder="Tier" 
+               th:value="${tier}" required>
+    </div>
 -->
-
-<select name="preferredLanguage" class="form-select">
-    <option th:each="lang : ${languages}" th:value="${lang}" th:text="${lang}"></option>
-</select>
-    <!-- Password -->
-    <div class="input-group mb-3">
-        <input type="password" class="form-control" name="password" placeholder="Password" required>
-    </div> 
-
-    <!-- Confirm Password -->
-    <div class="input-group mb-3">
-        <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required>
-    </div>
-    
-    
-
     <!-- Submit Button -->
     <div class="row">
         <div class="col-12">
             <div class="d-grid gap-2 d-flex justify-content-center">
                 <button type="submit" 
                         class="badge bg-primary rounded-pill fs-6 fw-normal text-decoration-none w-50 p-3">
-                    Proceed
+                    signup
                 </button>
             </div>
         </div>
     </div>
 </form>
-
 
 
                <!-- <div class="social-auth-links text-center mb-3 d-grid gap-2">

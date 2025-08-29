@@ -22,6 +22,7 @@ import com.invest.khumbu.DTO.InvestmentDTO;
 import com.invest.khumbu.Model.Investment;
 import com.invest.khumbu.Model.MakeInvestment;
 import com.invest.khumbu.Model.User;
+import com.invest.khumbu.Model.User.Language;
 import com.invest.khumbu.Repository.MakeInvestmentRepository;
 import com.invest.khumbu.Repository.UserRepository;
 import com.invest.khumbu.Services.InvestmentService;
@@ -64,7 +65,9 @@ public class InvestmentController {
         return "logon/login";
     }
     @GetMapping("/logon/signup")
-    public String signup() {
+    public String signup(Model model) {
+        model.addAttribute("user", new User());
+        model.addAttribute("languages", Language.values());
         return "logon/signup";
     }
     @GetMapping("/investDashboard")
