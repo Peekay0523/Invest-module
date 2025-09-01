@@ -2,6 +2,7 @@ package com.invest.khumbu.Controllers;
 
 import java.io.IOException;
 import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -138,7 +139,7 @@ public class SignUpController {
     }
 
     @GetMapping("/logon/awaiting-approval")
-    public String awaitingApproval() {
+    public String awaitingApproval(Model model, HttpSession session) {
         
         return "logon/awaiting-approval";
     }

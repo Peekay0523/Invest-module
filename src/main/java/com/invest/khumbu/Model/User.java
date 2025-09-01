@@ -130,7 +130,7 @@ public class User {
         SAVING, WEALTH, INVESTMENT
     }
     public enum Language {
-        EN, ZU, XH, TS, TN, ST, NS, VE, AF
+        ENGLISH, ZULU, XHOSA, TSHONGA, TSWANA, SWATI, NDEBELE, VENDA, AFRIKAANS
     }
     public enum KycStatus {
         PENDING, VERIFIED, REJECTED
